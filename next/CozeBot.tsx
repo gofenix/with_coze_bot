@@ -1,7 +1,8 @@
 "use client";
 
 import Script from "next/script";
-import type { CozeProps } from "../types/props";
+import type { CozeProps } from "../lib/props";
+import { cozeWebSDK } from "../lib/config";
 
 export default function CozeBot({
   botId,
@@ -13,9 +14,7 @@ export default function CozeBot({
   bottom = "10px",
   right = "10px",
 }: CozeProps) {
-  const cozeWebSDK =
-    "https://lf-cdn.coze.cn/obj/unpkg/flow-platform/chat-app-sdk/0.1.0-beta.5/libs/cn/index.js";
-
+  
   const inlineStyles = `
     #coze_bot_position > div:has(> iframe) {
       height: ${height};
